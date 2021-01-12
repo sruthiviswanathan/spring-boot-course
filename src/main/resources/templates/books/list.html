@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring5 Web App</title>
+    <style>
+    table, th, td {
+       border: 1px solid red;
+    }
+
+    th {
+        font-size: 16px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+    </style>
+</head>
+
+<body>
+<main>
+    <h1>Book List</h1>
+    <table>
+        <tr style="padding: 10px">
+            <th>ID</th>
+            <th>Title</th>
+            <th>Publisher</th>
+        </tr>
+
+        <tr style="padding: 8px;" th:each="book: ${books}">
+            <td th:text="${book.id}"></td>
+            <td th:text="${book.title}"></td>
+            <td th:text="${book.publisher.name}"></td>
+        </tr>
+
+    </table>
+</main>
+</body>
+</html>
